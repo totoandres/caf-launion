@@ -15,13 +15,17 @@
             color: #333; 
         }
 
-        .hero-header { 
-            background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-caf));
-            color: white; 
-            padding: 40px 20px; 
-            text-align: center;
-            border-bottom: 4px solid #fcc419;
-        }
+    .hero-header { 
+                /* Esto pone tu foto, la centra y le da una capa oscura para que el texto blanco se lea bien */
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                            url('img_caf/banner_inscripciones.webp');
+                background-size: cover;
+                background-position: center;
+                color: white; 
+                padding: 80px 20px; /* Le damos más altura para que luzca la foto */
+                text-align: center;
+                border-bottom: 4px solid #fcc419;
+            }
 
         .hero-header h1 { font-size: 2.5em; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
         .hero-header p { font-size: 1.1em; opacity: 0.9; margin-top: 10px; }
