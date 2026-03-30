@@ -3,42 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripciones - Club CAF La Unión</title>
+    <title>Inscripciones Oficiales - Club CAF La Unión</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Helvetica', sans-serif; margin: 0; background-color: #f4f7f6; color: #333; text-align: center; }
-        .header { background: #004a99; color: white; padding: 30px 20px; }
-        .container { max-width: 800px; margin: -30px auto 40px; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h2 { color: #004a99; margin-top: 0; }
-        .instrucciones { text-align: left; background: #eef6ff; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; border-left: 5px solid #004a99; }
-        iframe { width: 100%; border: none; min-height: 800px; border-radius: 10px; }
-        .btn-volver { display: inline-block; margin-top: 20px; text-decoration: none; color: #666; font-size: 0.9em; }
+        :root { --azul-caf: #004a99; --verde-caf: #28a745; --gris-claro: #f8f9fa; }
+        body { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; margin: 0; background-color: var(--gris-claro); color: #333; }
+
+        /* Header con Imagen de Fondo */
+        .hero-header { 
+            background: linear-gradient(rgba(0, 74, 153, 0.8), rgba(0, 74, 153, 0.8)), 
+                        url('https://www.caflaunion.cl/img_caf/logobueno.png'); /* Puedes cambiar esta URL por una foto de los niños corriendo */
+            background-size: contain;
+            background-position: center;
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center;
+        }
+
+        .hero-header h1 { font-size: 2.5em; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .hero-header p { font-size: 1.1em; opacity: 0.9; margin-top: 10px; }
+
+        .container { max-width: 900px; margin: -40px auto 40px; background: white; padding: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+
+        /* Texto Descriptivo */
+        .intro-text { padding: 40px 40px 20px; text-align: left; line-height: 1.6; }
+        .intro-text h2 { color: var(--azul-caf); border-bottom: 2px solid var(--azul-caf); display: inline-block; padding-bottom: 5px; }
+
+        .instrucciones-box { 
+            margin: 20px 40px; 
+            background: #fff9db; 
+            padding: 20px; 
+            border-radius: 10px; 
+            border-left: 6px solid #fcc419;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Formulario */
+        iframe { width: 100%; border: none; min-height: 1600px; }
+
+        /* Footer */
+        footer { background: #222; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
+        .footer-logo { max-width: 80px; margin-bottom: 15px; filter: brightness(0) invert(1); }
+        .social-links { margin: 20px 0; }
+        .social-links a { color: white; margin: 0 10px; font-size: 1.5em; text-decoration: none; }
+        
+        .btn-volver-flotante {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--azul-caf);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .hero-header h1 { font-size: 1.8em; }
+            .intro-text { padding: 25px 20px; }
+            .instrucciones-box { margin: 10px 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Club de Atletismo CAF</h1>
-        <p>Portal de Registro de Atletas</p>
-    </div>
+    <a href="index.html" class="btn-volver-flotante"><i class="fas fa-home"></i> Inicio</a>
+
+    <header class="hero-header">
+        <h1>Portal de Registro CAF</h1>
+        <p>Temporada 2024 - La Unión, Chile</p>
+    </header>
 
     <div class="container">
-        <h2>Ficha de Inscripción Digital</h2>
-        
-        <div class="instrucciones">
-            <strong><i class="fas fa-info-circle"></i> Importante:</strong>
-            <ul>
-                <li>Completa todos los campos con letra clara.</li>
-                <li>Asegúrate de escribir bien el RUT del atleta.</li>
-                <li>Si tienes más de un hijo, debes llenar una ficha por cada uno.</li>
-            </ul>
-        </div>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYI4WeSqWCjD_nPkCDSAFPwKwELpJNsPMqKn4OI8nHJ-LMWw/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-        
+        <section class="intro-text">
+            <h2>Bienvenido al Proceso de Inscripción</h2>
+            <p>
+                Este es el portal oficial del <strong>Club de Atletismo CAF La Unión</strong>. 
+                Buscamos digitalizar nuestra información para brindar un mejor seguimiento a cada atleta, 
+                gestionar de forma eficiente las competencias y mantener un contacto directo con los apoderados.
+            </p>
+            <p>
+                Al completar este registro, el atleta pasa a formar parte de nuestra base de datos oficial, 
+                lo que facilita la inscripción en torneos regionales y nacionales.
+            </p>
+        </section>
 
-        <br>
-        <a href="index.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver a la página principal</a>
+        <div class="instrucciones-box">
+            <i class="fas fa-clipboard-check fa-2x" style="color: #fcc419;"></i>
+            <div>
+                <strong>¿Qué necesitas?</strong><br>
+                RUT del alumno, datos de salud y contacto de emergencia del apoderado. El proceso toma menos de 5 minutos.
+            </div>
+        </div>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYI4WeSqWCjD_nPkCDSAFPwKwELpJNsPMqKn4OI8nHJ-LMWw/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        
     </div>
+
+    <footer>
+        <img src="https://www.caflaunion.cl/img_caf/logobueno.png" alt="Logo CAF" class="footer-logo">
+        <p>© 2024 Club de Atletismo CAF La Unión<br>Fomentando el deporte y la disciplina.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p style="font-size: 0.8em; color: #888;">Desarrollado para la comunidad atlética de la Provincia del Ranco.</p>
+    </footer>
 
 </body>
 </html>
