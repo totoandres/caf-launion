@@ -272,23 +272,41 @@
 
         
         /* Clima */
-      .clima-pro-caf {
-        background: #fdfdfd;
-        border-radius: 12px;
-        border: 1px solid #e2e8f0;
-        overflow: hidden;
-        margin-top: 15px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-    .clima-pro-header {
-        background: #004d99; /* Tu azul */
-        color: white;
-        padding: 8px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        text-align: center;
-        letter-spacing: 1px;
-    }
+          .clima-final-container {
+                background: white;
+                border-radius: 12px;
+                border: 1px solid #e0e0e0;
+                overflow: hidden;
+                margin-top: 15px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+            .clima-final-header {
+                background: #004d99; /* Azul CAF */
+                color: white;
+                padding: 8px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            .clima-final-body {
+                padding: 15px 5px;
+            }
+            .clima-final-body img {
+                max-width: 100%;
+                height: auto;
+            }
+            .btn-detalle-clima {
+                display: block;
+                padding: 8px;
+                font-size: 0.7rem;
+                color: #004d99;
+                text-decoration: none;
+                background: #f8f9fa;
+                border-top: 1px solid #eee;
+                font-weight: bold;
+            }
 
         
         
@@ -544,27 +562,20 @@
         <p><i class="fas fa-dumbbell"></i> <strong>Juveniles:</strong> Gimnasio </p>
     </div>
 
-  <div class="clima-pro-caf">
-    <div class="clima-pro-header">☀️ CLIMA LA UNIÓN</div>
-    
-    <a class="weatherwidget-io" href="https://forecast7.com/es/n40s2873s08/la-union/" 
-       data-label_1="LA UNIÓN" 
-       data-label_2="Región de Los Ríos" 
-       data-font="Roboto" 
-       data-icons="Climacons Animated" 
-       data-theme="pure" 
-       data-accent="rgba(255, 255, 255, 0)" 
-       data-basecolor="rgba(255, 255, 255, 0)" 
-       data-textcolor="#333" 
-       data-highcolor="#ff6600" 
-       data-lowcolor="#004d99" >
-       LA UNIÓN
-    </a>
-
-    <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    </script>
-</div>
+        
+     <div class="clima-final-container">
+        <div class="clima-final-header">☀️ Clima La Unión</div>
+        <div class="clima-final-body">
+            <div id="tt_1013444_1_72651">
+                <a href="https://www.tutiempo.net/la-union.html" target="_blank" rel="nofollow">
+                    <img src="https://www.tutiempo.net/w-grafico/1/1013444.png" alt="El tiempo en La Unión">
+                </a>
+            </div>
+        </div>
+        <a href="https://www.tutiempo.net/la-union.html" target="_blank" class="btn-detalle-clima">
+            VER PRONÓSTICO EXTENDIDO →
+        </a>
+    </div>
 
     <div class="ads-box">
         <div class="ads-icon"><i class="fas fa-store"></i></div>
