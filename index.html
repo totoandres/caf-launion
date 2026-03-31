@@ -215,6 +215,130 @@
             background: white;
             color: #001A33;
         }
+
+
+        /* --- ESTILOS SIDEBAR CAF --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Items de Agenda */
+        .event-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        
+        .event-oficial {
+            border-left: 4px solid var(--naranja);
+        }
+        
+        .date-box {
+            background: var(--naranja);
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 50px;
+            font-size: 0.75rem;
+        }
+        
+        .date-box span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .event-info strong { display: block; font-size: 0.95rem; }
+        .event-info small { color: #666; display: block; line-height: 1.2; }
+        
+        /* Cajas de Información */
+        .info-box-blue {
+            background: #eef2f7;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 5px solid var(--azul-caf);
+        }
+        
+        .info-box-blue h4 { margin: 0 0 10px 0; color: var(--azul-caf); font-size: 0.9rem; }
+        .info-box-blue p { font-size: 0.8rem; margin: 5px 0; }
+        
+        /* Clima */
+        .weather-widget-container {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .weather-header {
+            background: var(--azul-caf);
+            color: white;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        /* Publicidad */
+        .ads-box {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            border: 2px dashed #cbd5e0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .ads-box:hover { border-color: var(--naranja); }
+        .ads-icon { color: #a0aec0; font-size: 1.5rem; margin-bottom: 10px; }
+        .ads-box h4 { color: var(--azul-caf); font-size: 0.9rem; text-transform: uppercase; margin: 0 0 10px 0; }
+        .ads-box p { font-size: 0.8rem; color: #718096; margin-bottom: 15px; }
+        
+        .btn-ads {
+            display: inline-block;
+            background: white;
+            color: var(--azul-caf);
+            border: 1px solid var(--azul-caf);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        /* Cumpleaños */
+        .birthday-box {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid #eee;
+        }
+        
+        .birthday-title { color: var(--naranja); font-weight: bold; font-size: 0.8rem; }
+        .birthday-box ul { margin: 10px 0 0 0; padding-left: 15px; font-size: 0.8rem; color: #555; }
+        
+        /* Status Cupos */
+        .status-box-closed {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            text-align: center;
+        }
+        
+        .badge-red { background: #e74c3c; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
+        .status-box-closed h4 { color: var(--azul-caf); margin: 15px 0 10px 0; }
+        .status-box-closed p { font-size: 0.85rem; color: #666; }
+                
+
+
+        
         
         /* Estilo del Pop-up Moderno */
         .overlay-popup {
@@ -382,118 +506,68 @@
         </section>
     </section>
 
-    <aside class="sidebar">
+    
+<aside class="sidebar">
     <h3><i class="fas fa-calendar-alt"></i> Agenda CAF</h3>
     
-        <div class="event-item" style="border-left: 4px solid var(--naranja); padding-left: 10px;">
-            <div class="date-box" style="background: var(--naranja);">
-                <span>28</span> Mar
-            </div>
-            <div>
-                <strong>Meeting Valdivia</strong><br>
-                <small>Inst. Alemán | 10:00 - 14:00</small>
-                <br><small><i>Categorías: 2008 a 2019</i></small>
-            </div>
+    <div class="event-item event-oficial">
+        <div class="date-box">
+            <span>11</span> Abr
         </div>
-    
-        <div class="event-item">
-            <div class="date-box">
-                <span>04</span> Abr
-            </div>
-            <div>
-                <strong>Entrenamiento General</strong><br>
-                <small>Estadio Municipal | 18:00</small>
-            </div>
+        <div class="event-info">
+            <strong>Soprole Osorno</strong>
+            <small>Pista Atlética | 08:30</small>
+            <small><i>Categorías: Todas</i></small>
         </div>
-        
-        <div style="margin-top: 25px; padding: 15px; background: #eef2f7; border-radius: 12px; border-left: 5px solid var(--azul-caf);">
-            <h4 style="margin-top: 0; color: var(--azul-caf); font-size: 0.9rem;">UBICACIÓN ENTRENAMIENTOS</h4>
-            <p style="font-size: 0.8rem; margin-bottom: 5px;">
-                <i class="fas fa-running"></i> <strong>Iniciación:</strong> Estadio Municipal
-            </p>
-            <p style="font-size: 0.8rem;">
-                <i class="fas fa-dumbbell"></i> <strong>Juveniles:</strong> Gimnasio (Lunes y Miércoles)
-            </p>
+    </div>
+
+    <div class="event-item event-oficial">
+        <div class="date-box">
+            <span>24</span> Abr
         </div>
-        
-        
-       <div style="margin-top: 30px; background: white; border-radius: 20px; border: 1px solid #eee; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            <div style="background: var(--azul-caf); color: white; padding: 12px 15px; font-weight: bold; font-size: 0.9rem;">
-                <i class="fas fa-wind"></i> ESTADO DEL TIEMPO - LA UNIÓN
-            </div>
-            <div style="padding: 0;">
-                <div id="cont_808061f0672728956973686889758509">
-                    <script type="text/javascript" async src="https://www.meteored.cl/wid_loader/808061f0672728956973686889758509"></script>
-                </div>
-            </div>
+        <div class="event-info">
+            <strong>Soprole Temuco</strong>
+            <small>Campo de Deportes</small>
+            <small><i>Final Regional</i></small>
         </div>
-        
-        <div style="margin-top: 20px; background: white; border-radius: 25px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; font-family: 'Montserrat', sans-serif;">
-            
-            <div style="color: #888; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">La Unión</div>
-            
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 10px 0;">
-                <i class="fas fa-cloud-sun" style="font-size: 3rem; color: #FFD700; filter: drop-shadow(0 0 10px rgba(255,215,0,0.3));"></i>
-                <span style="font-size: 3.5rem; font-weight: 200; color: #333;">18°</span>
-            </div>
-        
-            <div style="font-weight: 600; color: #444; margin-bottom: 5px;">Parcialmente Nublado</div>
-            <div style="font-size: 0.85rem; color: #999;">Máx: 21° • Mín: 9°</div>
-        
-            <div style="display: flex; justify-content: space-between; margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
-                <div style="font-size: 0.75rem; color: #666;"><strong>LUN</strong><br><i class="fas fa-sun" style="color: #FFB300; margin: 5px 0;"></i><br>22°</div>
-                <div style="font-size: 0.75rem; color: #666;"><strong>MAR</strong><br><i class="fas fa-cloud-sun" style="color: #FFB300; margin: 5px 0;"></i><br>19°</div>
-                <div style="font-size: 0.75rem; color: #666;"><strong>MIE</strong><br><i class="fas fa-cloud-showers-heavy" style="color: #4A90E2; margin: 5px 0;"></i><br>14°</div>
-                <div style="font-size: 0.75rem; color: #666;"><strong>JUE</strong><br><i class="fas fa-cloud" style="color: #A0A0A0; margin: 5px 0;"></i><br>16°</div>
-                <div style="font-size: 0.75rem; color: #666;"><strong>VIE</strong><br><i class="fas fa-sun" style="color: #FFB300; margin: 5px 0;"></i><br>20°</div>
-            </div>
-        
-            <a href="https://www.meteored.cl/tiempo-en_La+Union-America+Sur-Chile-Los+Rios-SCRO-1-69905.html" target="_blank" style="display: block; margin-top: 15px; font-size: 0.7rem; color: var(--azul-caf); text-decoration: none; font-weight: bold;">
-                VER PRONÓSTICO DETALLADO →
-            </a>
+    </div>
+
+    <div class="info-box-blue">
+        <h4>UBICACIÓN ENTRENAMIENTOS</h4>
+        <p><i class="fas fa-running"></i> <strong>Iniciación:</strong> Estadio Municipal</p>
+        <p><i class="fas fa-dumbbell"></i> <strong>Juveniles:</strong> Gimnasio (Lun y Mié)</p>
+    </div>
+
+    <div class="weather-widget-container">
+        <div class="weather-header">
+            <i class="fas fa-wind"></i> ESTADO DEL TIEMPO - LA UNIÓN
         </div>
-        
-        <div style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); border: 2px dashed #cbd5e0; border-radius: 12px; padding: 20px; margin-top: 25px; text-align: center; transition: 0.3s;" onmouseover="this.style.borderColor='var(--naranja)'" onmouseout="this.style.borderColor='#cbd5e0'">
-    
-            <div style="color: #a0aec0; font-size: 1.5rem; margin-bottom: 10px;">
-                <i class="fas fa-store"></i>
-            </div>
-            
-            <h4 style="color: var(--azul-caf); font-size: 0.9rem; margin: 0 0 10px 0; letter-spacing: 1px; text-transform: uppercase;">
-                Espacio Disponible
-            </h4>
-            
-            <p style="font-size: 0.8rem; color: #718096; line-height: 1.4; margin-bottom: 15px;">
-                ¿Tienes una tienda o emprendimiento? Impulsa el deporte local y haz que tu marca llegue a toda nuestra comunidad.
-            </p>
-            
-            <a href="https://wa.me/569XXXXXXXX" target="_blank" style="display: inline-block; background: white; color: var(--azul-caf); border: 1px solid var(--azul-caf); padding: 8px 15px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; text-decoration: none; transition: 0.3s;">
-                MÁS INFORMACIÓN AQUÍ
-            </a>
+        <div id="cont_808061f0672728956973686889758509">
+            <script type="text/javascript" async src="https://www.meteored.cl/wid_loader/808061f0672728956973686889758509"></script>
         </div>
-        
-        
-       
-        
-        <div style="background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; border: 1px solid #eee;">
-            <span style="color: var(--naranja); font-weight: bold; font-size: 0.8rem;"><i class="fas fa-birthday-cake"></i> CUMPLEAÑOS ABRIL</span>
-            <ul style="margin: 10px 0 0 0; padding-left: 15px; font-size: 0.8rem; color: #555; list-style-type: circle;">
-                <li>Sofi Araya (05 Abr)</li>
-                <li>Franco Sotelo (22 Abr)</li>
-            </ul>
-        </div>
-        
-        <div style="background: white; border-radius: 12px; padding: 20px; border: 2px dashed #ccc; margin-top: 20px; text-align: center;">
-            <span style="background: #e74c3c; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold;">CUPOS COMPLETOS</span>
-            <h4 style="color: var(--azul-caf); margin: 15px 0 10px 0;">Postulaciones 1er Semestre</h4>
-            <p style="font-size: 0.85rem; color: #666; margin-bottom: 0;">
-                Por el momento no contamos con vacantes disponibles. Te invitamos a estar atento a nuestras actualizaciones.
-            </p>
-        </div>
-        
-        
-        
-    </aside>
+    </div>
+
+    <div class="ads-box">
+        <div class="ads-icon"><i class="fas fa-store"></i></div>
+        <h4>Espacio Disponible</h4>
+        <p>¿Tienes una tienda o emprendimiento? Impulsa el deporte local aquí.</p>
+        <a href="https://wa.me/569XXXXXXXX" target="_blank" class="btn-ads">MÁS INFORMACIÓN</a>
+    </div>
+
+    <div class="birthday-box">
+        <span class="birthday-title"><i class="fas fa-birthday-cake"></i> CUMPLEAÑOS ABRIL</span>
+        <ul>
+            <li>Sofi Araya (05 Abr)</li>
+            <li>Franco Sotelo (22 Abr)</li>
+        </ul>
+    </div>
+
+    <div class="status-box-closed">
+        <span class="badge-red">CUPOS COMPLETOS</span>
+        <h4>Postulaciones 1er Semestre</h4>
+        <p>Por el momento no contamos con vacantes disponibles.</p>
+    </div>
+</aside>
     
     
     
