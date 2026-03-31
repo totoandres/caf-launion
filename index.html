@@ -117,6 +117,79 @@
             padding: 0 20px;
         }
 
+        /* Inscripciones alumnos */
+            .cta-registro-oficial {
+                background: #f8fafc;
+                border: 2px solid #004d99;
+                border-radius: 15px;
+                padding: 25px;
+                margin: 25px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: #333;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                gap: 20px;
+            }
+        
+            .cta-text-oficial h2 {
+                margin: 0;
+                font-size: 1.3rem;
+                color: #004d99;
+                text-transform: uppercase;
+                font-weight: 800;
+            }
+        
+            .cta-text-oficial p {
+                margin: 8px 0 0 0;
+                font-size: 0.95rem;
+                line-height: 1.4;
+                color: #555;
+            }
+        
+            .btn-regularizar {
+                background: #ff6600; /* Naranja CAF */
+                color: white !important;
+                text-decoration: none;
+                padding: 15px 25px;
+                border-radius: 8px;
+                font-weight: bold;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: none;
+            }
+        
+            .btn-regularizar:hover {
+                background: #e65c00;
+                transform: scale(1.02);
+            }
+        
+            .aviso-solo-socios {
+                display: block;
+                font-size: 0.75rem;
+                color: #e74c3c;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+        
+            @media (max-width: 768px) {
+                .cta-registro-oficial {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .btn-regularizar {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+
+
+        
+
         /* Columna Izquierda: Noticias y Fotos */
         .feed-noticias h2 { border-bottom: 3px solid var(--azul-caf); display: inline-block; margin-bottom: 25px; }
         .card-noticia { background: white; border-radius: 15px; overflow: hidden; box-shadow: var(--sombra); margin-bottom: 30px; transition: 0.3s; }
@@ -508,6 +581,18 @@
 </section>
 
 <div class="main-layout">
+
+
+    <section class="cta-registro-oficial">
+        <div class="cta-text-oficial">
+            <h2>Actualización de Ficha 2026</h2>
+            <p>Todos los alumnos vigentes deben completar este proceso para regularizar su inscripción y actualizar nuestra base de datos.</p>
+            <span class="aviso-solo-socios">⚠️ Exclusivo para alumnos actuales del club.</span>
+        </div>
+        <a href="https://www.caflaunion.cl/inscripciones.html" class="btn-regularizar">
+            <i class="fas fa-edit"></i> REGULARIZAR AQUÍ
+        </a>
+    </section>
     
     <section class="feed-noticias" id="noticias">
         <h2>Últimas Novedades</h2>
