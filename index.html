@@ -274,30 +274,30 @@
         /* Clima */
           /* Ajuste específico para el Widget de Clima */
         /* Estenedor principal del clima */
-        .clima-container-fixed {
-            background: white;
-            border-radius: 15px;
-            border: 1px solid #e0e0e0;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .clima-header-fixed {
-            background: #004d99; /* Azul CAF */
-            color: white;
-            padding: 10px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-align: center;
-            text-transform: uppercase;
-        }
-        .clima-content-fixed {
-            padding: 5px;
-            min-height: 150px; /* Esto reserva el espacio blanco que ves */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+            .clima-caf-container {
+                width: 100%;
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+                border: 1px solid #eee;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+                margin-top: 15px;
+            }
+            .clima-caf-header {
+                background: #004d99;
+                color: white;
+                padding: 8px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-align: center;
+                display: block;
+            }
+            .clima-caf-frame {
+                width: 100%;
+                height: 150px;
+                border: none;
+                display: block;
+            }
         
         /* Forzar que el iframe de Meteored use el ancho completo */
         #cont_808061f0672728956973686889758509 iframe {
@@ -557,15 +557,16 @@
         <p><i class="fas fa-dumbbell"></i> <strong>Juveniles:</strong> Gimnasio </p>
     </div>
 
-    <div class="clima-container-fixed">
-        <div class="clima-header-fixed">
-            <i class="fas fa-cloud-sun"></i> Clima La Unión
+   <div class="clima-caf-container">
+        <div class="clima-caf-header">
+            <i class="fas fa-cloud-sun"></i> CLIMA LA UNIÓN
         </div>
-        <div class="clima-content-fixed">
-            <div id="cont_808061f0672728956973686889758509">
-                <script type="text/javascript" async src="https://www.meteored.cl/wid_loader/808061f0672728956973686889758509"></script>
-            </div>
-        </div>
+        <iframe 
+            class="clima-caf-frame"
+            src="https://www.meteored.cl/get_widget/808061f0672728956973686889758509" 
+            scrolling="no" 
+            frameborder="0">
+        </iframe>
     </div>
 
     <div class="ads-box">
