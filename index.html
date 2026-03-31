@@ -268,22 +268,39 @@
         
         .info-box-blue h4 { margin: 0 0 10px 0; color: var(--azul-caf); font-size: 0.9rem; }
         .info-box-blue p { font-size: 0.8rem; margin: 5px 0; }
+
+
         
         /* Clima */
-        .weather-widget-container {
+          /* Ajuste específico para el Widget de Clima */
+        .weather-sidebar-box {
             background: white;
-            border-radius: 20px;
+            border-radius: 15px;
             border: 1px solid #eee;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         
         .weather-header {
             background: var(--azul-caf);
             color: white;
-            padding: 12px 15px;
+            padding: 12px;
+            border-radius: 15px 15px 0 0;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        
+        .weather-content {
+            padding: 10px 0;
+            min-height: 150px; /* Reserva espacio para evitar saltos visuales */
+            display: block; /* Importante: No usar flex aquí para no romper el script externo */
+        }
+        
+        /* Forzar que el iframe de Meteored use el ancho completo */
+        #cont_808061f0672728956973686889758509 iframe {
+            width: 100% !important;
+            margin: 0 auto !important;
         }
         
         /* Publicidad */
