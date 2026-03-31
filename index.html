@@ -118,74 +118,126 @@
         }
 
         /* Inscripciones alumnos */
-            .cta-registro-oficial {
-                background: #f8fafc;
-                border: 2px solid #004d99;
-                border-radius: 15px;
-                padding: 25px;
-                margin: 25px 0;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                color: #333;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-                gap: 20px;
-            }
-        
-            .cta-text-oficial h2 {
-                margin: 0;
-                font-size: 1.3rem;
-                color: #004d99;
-                text-transform: uppercase;
-                font-weight: 800;
-            }
-        
-            .cta-text-oficial p {
-                margin: 8px 0 0 0;
-                font-size: 0.95rem;
-                line-height: 1.4;
-                color: #555;
-            }
-        
-            .btn-regularizar {
-                background: #ff6600; /* Naranja CAF */
-                color: white !important;
-                text-decoration: none;
-                padding: 15px 25px;
-                border-radius: 8px;
-                font-weight: bold;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                white-space: nowrap;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                border: none;
-            }
-        
-            .btn-regularizar:hover {
-                background: #e65c00;
-                transform: scale(1.02);
-            }
-        
-            .aviso-solo-socios {
-                display: block;
-                font-size: 0.75rem;
-                color: #e74c3c;
-                margin-top: 5px;
-                font-weight: bold;
-            }
-        
-            @media (max-width: 768px) {
                 .cta-registro-oficial {
-                    flex-direction: column;
-                    text-align: center;
-                }
-                .btn-regularizar {
-                    width: 100%;
-                    justify-content: center;
-                }
+            background: #ffffff;
+            /* Sombras suaves para dar profundidad (efecto "neumórfico" suave) */
+            box-shadow: 
+                0 2px 4px rgba(0, 77, 153, 0.03), 
+                0 10px 30px rgba(0, 77, 153, 0.06);
+            /* Bordes más redondeados y modernos */
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 1100px;
+            width: 90%;
+            /* Flexbox para alinear */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            transition: all 0.3s ease;
+            /* Pequeño detalle: borde superior sutil */
+            border-top: 3px solid var(--azul-caf);
+            border-left: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        /* Efecto hover en toda la caja */
+        .cta-registro-oficial:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 5px 10px rgba(0, 77, 153, 0.06), 
+                0 15px 40px rgba(0, 77, 153, 0.1);
+        }
+        
+        .cta-text-oficial {
+            flex: 1;
+        }
+        
+        .cta-text-oficial h2 {
+            margin: 0;
+            /* Tipografía más elegante y espaciada */
+            font-size: 1.4rem;
+            color: var(--azul-caf);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        
+        .cta-text-oficial p {
+            margin: 10px 0 0 0;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #555;
+            font-weight: 400;
+        }
+        
+        /* La advertencia roja, más sutil */
+        .aviso-solo-socios {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #e74c3c;
+            margin-top: 10px;
+            font-weight: 600;
+            background: rgba(231, 76, 60, 0.08);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        
+        /* --- BOTÓN PREMIUM CON GRADIENTE CAF --- */
+        .btn-regularizar {
+            /* Gradiente sutil CAF (Naranja a Naranja Oscuro) */
+            background: linear-gradient(135deg, #ff6600 0%, #e65c00 100%);
+            color: white !important;
+            text-decoration: none;
+            padding: 16px 35px;
+            /* Redondeado moderno y completo */
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* Transición suave */
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            /* Sombra exclusiva para el botón */
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+        }
+        
+        .btn-regularizar i {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .btn-regularizar:hover {
+            /* Efecto al pasar el mouse */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.45);
+            background: linear-gradient(135deg, #ff751a 0%, #ff6600 100%);
+        }
+        
+        /* --- ADAPTACIÓN MÓVIL --- */
+        @media (max-width: 768px) {
+            .cta-registro-oficial {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
             }
+            .btn-regularizar {
+                width: 100%;
+                justify-content: center;
+                padding: 15px;
+            }
+            .cta-text-oficial h2 {
+                font-size: 1.2rem;
+            }
+        }
 
 
         
