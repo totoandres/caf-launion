@@ -272,41 +272,54 @@
 
         
         /* Clima */
-          .clima-final-container {
-                background: white;
-                border-radius: 12px;
-                border: 1px solid #e0e0e0;
-                overflow: hidden;
-                margin-top: 15px;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-                text-align: center;
-                font-family: Arial, sans-serif;
-            }
-            .clima-final-header {
-                background: #004d99; /* Azul CAF */
-                color: white;
-                padding: 8px;
-                font-size: 0.8rem;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-            .clima-final-body {
-                padding: 15px 5px;
-            }
-            .clima-final-body img {
-                max-width: 100%;
-                height: auto;
-            }
-            .btn-detalle-clima {
-                display: block;
-                padding: 8px;
-                font-size: 0.7rem;
-                color: #004d99;
-                text-decoration: none;
-                background: #f8f9fa;
-                border-top: 1px solid #eee;
-                font-weight: bold;
-            }
+             .clima-container-v3 {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            margin-top: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .clima-header-v3 {
+            background: #004d99;
+            color: white;
+            padding: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .clima-content-v3 {
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+        }
+        /* Estilo para el link/imagen que envía el proveedor */
+        .clima-content-v3 a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .clima-footer-v3 {
+            background: #f8fafc;
+            border-top: 1px solid #eee;
+            padding: 8px;
+        }
+        .clima-footer-v3 a {
+            font-size: 0.7rem;
+            color: #004d99;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
         
         
@@ -563,19 +576,24 @@
     </div>
 
         
-     <div class="clima-final-container">
-        <div class="clima-final-header">☀️ Clima La Unión</div>
-        <div class="clima-final-body">
+   <div class="clima-container-v3">
+        <div class="clima-header-v3">☀️ Clima La Unión</div>
+        
+        <div class="clima-content-v3">
             <div id="tt_1013444_1_72651">
                 <a href="https://www.tutiempo.net/la-union.html" target="_blank" rel="nofollow">
-                    <img src="https://www.tutiempo.net/w-grafico/1/1013444.png" alt="El tiempo en La Unión">
+                    <img src="https://www.tutiempo.net/w-grafico/1/1013444.png" alt="Clima" style="width: 60px; height: auto;">
+                    <span>Ver Tiempo Actual</span>
                 </a>
             </div>
         </div>
-        <a href="https://www.tutiempo.net/la-union.html" target="_blank" class="btn-detalle-clima">
-            VER PRONÓSTICO EXTENDIDO →
-        </a>
+    
+        <div class="clima-footer-v3">
+            <a href="https://www.tutiempo.net/la-union.html" target="_blank">PRONÓSTICO EXTENDIDO →</a>
+        </div>
     </div>
+
+    
 
     <div class="ads-box">
         <div class="ads-icon"><i class="fas fa-store"></i></div>
