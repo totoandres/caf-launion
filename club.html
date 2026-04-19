@@ -44,6 +44,16 @@
         .miembro-card strong { display: block; color: var(--azul-caf); font-size: 1.1rem; }
         .miembro-card span { color: var(--naranja); font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
 
+
+
+        /* Estilo para la nueva sección de Entrenadores */
+        .coaches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .coach-card { background: var(--gris-fondo); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #ddd; }
+        .coach-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
+        .coach-card h3 { color: var(--azul-caf); margin: 10px 0 5px; }
+        .coach-card .rol { color: var(--naranja); font-weight: bold; font-size: 0.9rem; margin-bottom: 15px; }
+        .coach-card .bio { font-size: 0.9rem; color: #666; text-align: justify; }
+
         /* Estilo Documentos */
         .doc-item { display: flex; align-items: center; padding: 15px; border: 1px solid #eee; border-radius: 12px; margin-bottom: 10px; transition: 0.3s; }
         .doc-item:hover { border-color: var(--naranja); background: #fffcf9; }
@@ -98,6 +108,25 @@
             <p><strong>Head Coach:</strong> Nicolás Cañoles</p>
         </div>
     </section>
+
+
+    <section id="entrenadores">
+    <h2><i class="fas fa-running"></i> Cuerpo Técnico</h2>
+    <div class="coaches-grid">
+        <div class="coach-card">
+            <img src="img_caf/nicolas.webp" alt="Nicolás Cañoles - Head Coach CAF">
+            <h3>Nicolás Cañoles</h3>
+            <p class="rol">Fundador y Head Coach</p>
+            <p class="bio">Breve biografía de Nicolás. Aquí puedes destacar su trayectoria, sus años de experiencia en el atletismo y su visión para el club.</p>
+        </div>
+        <div class="coach-card">
+            <img src="img_caf/jhon.webp" alt="Jhon - Entrenador CAF">
+            <h3>Jhon [Apellido]</h3>
+            <p class="rol">Entrenador - Abril 2026</p>
+            <p class="bio">Breve biografía de Jhon. Aquí puedes detallar su especialidad deportiva y su aporte técnico que trae al club este 2026.</p>
+        </div>
+    </div>
+</section>
 
     <section id="documentos">
         <h2><i class="fas fa-file-download"></i> Documentos Oficiales</h2>
