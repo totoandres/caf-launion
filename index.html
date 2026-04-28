@@ -940,28 +940,29 @@ function toggleMenu() {
     fetch('noticias.json')
         .then(response => response.json())
         .then(data => {
-            const container = document.getElementById('contenedor-noticias');
-            
-            // Usamos la primera noticia como la "Destacada"
-            const dest = data[0];
-            let html = `
-                <section class="noticia-destacada-section">
-                    <div class="noticia-destacada-container">
-                        <div class="destacada-img-col">
-                            <img src="${dest.img}" alt="${dest.titulo}">
-                        </div>
-                        <div class="destacada-contenido-col">
-                            <span class="tag-destacado">${dest.tag}</span>
-                            <h2 class="destacada-titulo">${dest.titulo}</h2>
-                            <p class="destacada-resumen">${dest.resumen}</p>
-                            <a href="${dest.link}" class="btn-noticia">Leer crónica completa</a>
-                        </div>
-                    </div>
-                </section>`;
+            // Verificar que hay datos
+            if (!data || data.length === 0) return;
 
-            // Aquí puedes agregar un bucle si quieres listar más noticias abajo
+            const container = document.getElementById('contenedor-noticias');
+            const dest = data[0]; 
+
+            // Construimos solo el contenido, NO la <section> (ya la tienes en el HTML)
+            let html = `
+                <div class="noticia-destacada-container">
+                    <div class="destacada-img-col">
+                        <img src="${dest.img || ''}" alt="${dest.titulo || 'Noticia'}">
+                    </div>
+                    <div class="destacada-contenido-col">
+                        <span class="tag-destacado">${dest.tag || 'DESTACADO'}</span>
+                        <h2 class="destacada-titulo">${dest.titulo || 'Sin título'}</h2>
+                        <p class="destacada-resumen">${dest.resumen || ''}</p>
+                        <a href="${dest.link || '#'}" class="btn-noticia">Leer crónica completa</a>
+                    </div>
+                </div>`;
+
             container.innerHTML = html;
-        });
+        })
+        .catch(error => console.error('Error cargando noticias.json:', error));
 </script>
     
 
