@@ -895,5 +895,26 @@ function toggleMenu() {
 }
 </script>
 
+<script>
+fetch('noticias.json')
+    .then(res => res.json())
+    .then(data => {
+        // 1. Mostrar la Destacada (la primera del JSON)
+        const destacada = data[0];
+        document.getElementById('contenedor-destacada').innerHTML = `
+            <h2>${destacada.titulo}</h2>
+            <p>${destacada.resumen}</p>
+        `;
+
+        // 2. Mostrar las siguientes dos (Recientes)
+        const recientes = data.slice(1, 3); // Toma desde la posición 1 hasta la 3
+        const contenedorRecientes = document.getElementById('contenedor-recientes');
+        recientes.forEach(n => {
+            contenedorRecientes.innerHTML += `<article><h3>${n.titulo}</h3></article>`;
+        });
+    });
+</script>
+    
+
 </body>
 </html>
