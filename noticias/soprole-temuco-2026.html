@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crónica: Meeting Valdivia - CAF La Unión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-caf: #002D55;
+            --naranja: #FF6600;
+            --gris-claro: #F8F9FA;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: #333; line-height: 1.6; }
+        
+        /* Navegación Centrada */
+        nav { background: var(--azul-caf); padding: 15px 0; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; }
+        .nav-container { width: 100%; max-width: 800px; display: flex; justify-content: center; align-items: center; padding: 0 20px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--naranja); }
+
+        /* Estructura de la Noticia - AQUÍ ESTABA EL ERROR DEL MARGEN */
+        .noticia-header { background: var(--gris-claro); padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--naranja); }
+        
+        /* Este contenedor es el que evita que el texto toque los bordes */
+        .noticia-cuerpo { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 25px; /* 25px de margen interno para que respire en el celular */
+            box-sizing: border-box; 
+        }
+
+        h1 { font-size: 2.5rem; color: var(--azul-caf); margin: 20px 0; line-height: 1.2; }
+        .categoria-tag { background: var(--azul-caf); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+        
+        .noticia-content img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 15px; 
+            margin: 30px 0; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+        }
+        
+        .destacado-texto { 
+            font-size: 1.3rem; 
+            color: var(--azul-caf); 
+            font-weight: 600; 
+            border-left: 5px solid var(--naranja); 
+            padding-left: 20px; 
+            margin: 40px 0; 
+            font-style: italic; 
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--azul-caf);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .site-footer { background: #001A33; color: white; padding: 40px 20px; font-size: 0.9rem; margin-top: 60px; text-align: center; }
+        
+        /* --- ESTO FALTA EN TU NOTICIA PARA QUE SE VEA COMO EL INDEX --- */
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 40px;
+        text-align: left; /* Para que el texto no esté centrado y se vea profesional */
+    }
+    
+    .footer-section h4 {
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        border-left: 3px solid var(--naranja);
+        padding-left: 10px;
+    }
+    
+    .footer-section p, .footer-section a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
+    
+    .footer-section a:hover {
+        color: var(--naranja);
+        padding-left: 5px;
+    }
+    
+    .merlin-credit {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border: 1px solid rgba(255,255,255,0.3);
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container { 
+            grid-template-columns: 1fr; 
+            text-align: center; 
+        }
+        .footer-section h4 { border-left: none; padding-left: 0; }
+    }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .noticia-cuerpo { padding: 30px 20px; } /* Mantiene el margen en pantallas chicas */
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../club.html">El Club</a> 
+            <a href="../index.html#noticias">Noticias</a>
+            <a href="../index.html#galeria">Fotos</a>
+            <a href="https://instagram.com/caf_launion" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</nav>
+
+<article>
+    <header class="noticia-header">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+            <span class="categoria-tag">NACIONAL / TEMUCO</span>
+            <h1>Histórico: CAF La Unión brilla en Soprole Temuco 2026</h1>
+            <span style="display:block; margin-top:15px; color:#888;"><i class="far fa-calendar-alt"></i> Abril, 2026</span>
+        </div>
+    </header>
+
+  <div class="noticia-cuerpo noticia-content">
+    
+    <p>Durante los días 24, 25 y 26 de abril, el <strong>Club Atlético CAF de La Unión</strong> vivió una de sus jornadas más memorables en la historia reciente del deporte escolar. Nuestra delegación participó en la nueva fecha de los prestigiosos campeonatos de atletismo <strong>Soprole</strong>, celebrados en la ciudad de Temuco, enfrentándose al más alto nivel del atletismo escolar de toda la zona sur del país.</p>
+
+    <img src="../img_caf/img_noticias/temuco_pista.webp" alt="Atletas del CAF en competencia en Temuco">
+
+    <div class="destacado-texto">
+        "Somos la única escuela municipal de nuestra comuna y el único establecimiento en la historia local en lograr una participación de este nivel. Este es un triunfo del trabajo constante y la convicción de nuestros atletas."
+    </div>
+
+    <h3>La hazaña de la Escuela Radimadi</h3>
+    <p>Más allá de los excelentes desempeños individuales, esta edición será recordada por un logro colectivo excepcional. Queremos destacar los dos <strong>Primeros Lugares</strong> obtenidos por la <strong>Escuela Radimadi Oficial</strong> en las pruebas de relevos 4x200 y 5x80, en la categoría infantil varones. Este resultado no solo llena de orgullo a nuestra institución, sino que pone al atletismo municipal en lo más alto del podio regional.</p>
+
+    <img src="../img_caf/img_noticias/temuco_podio.webp" alt="Equipo de relevos Escuela Radimadi celebrando">
+
+    <h3>Un proyecto educativo y deportivo inclusivo</h3>
+    <p>El éxito del CAF no es casualidad; es el reflejo de un trabajo integrador. Nuestro club es un punto de encuentro que une a niños y jóvenes de diversos establecimientos de La Unión y Río Bueno, formando una comunidad deportiva diversa y comprometida. Actualmente, contamos con representantes de:</p>
+    
+    <ul style="column-count: 2; margin-bottom: 20px;">
+        <li>Escuela Radimadi</li>
+        <li>Escuela El Maitén</li>
+        <li>Colegio Santa Marta</li>
+        <li>Escuela N° 2</li>
+        <li>Liceo RAAC</li>
+        <li>Escuela Aldea Campesina</li>
+        <li>Colegio de Cultura</li>
+        <li>Colegio Nacional</li>
+        <li>Garden College</li>
+        <li>Colegio Alemán</li>
+        <li>Escuela rural Huillinco</li>
+        <li>Liceo Industrial</li>
+        <li>Colegio Santa Cruz</li>
+        <li>Escuela Río Bueno</li>
+        <li>Liceo Vicente Pérez Rosales</li>
+    </ul>
+
+    <h3>El llamado a la comunidad</h3>
+    <p>Desde la directiva y el cuerpo técnico del CAF, extendemos una invitación abierta a seguir apoyando el atletismo local. El camino hacia el alto rendimiento requiere de generar más y mejores instancias de perfeccionamiento. Invitamos a las autoridades, familias y a la comunidad en general a seguir motivando la práctica deportiva, pieza fundamental para el desarrollo integral de nuestros futuros talentos.</p>
+
+    <div style="margin-top: 50px; padding: 20px; border-top: 2px solid #EEE; text-align: center; color: #666; font-size: 0.9rem;">
+        <p><strong>Nota redactada por:</strong> Equipo de Comunicación CAF 2026</p>
+        <p><em>Para prensa y medios interesados, contactar a través de nuestros canales oficiales.</em></p>
+    </div>
+
+    <a href="../index.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+</div>
+</article>
+
+<footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Club CAF La Unión</h4>
+                <p>Formando atletas, forjando carácter. El club de atletismo referente de la Región de Los Ríos.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Estadio Municipal, La Unión, Chile.</p>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <a href="club.html">Historia y Directiva</a>
+                <a href="#noticias">Noticias Recientes</a>
+                <a href="#galeria">Galería de Fotos</a>
+                <a href="docs/reglamento.pdf">Reglamento Interno</a>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <a href="https://wa.me/569XXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Profesor Nicolás</a>
+                <a href="mailto:contacto@caflaunion.cl"><i class="far fa-envelope"></i> contacto@caflaunion.cl</a>
+                <a href="https://instagram.com/caf_launion" target="_blank"><i class="fab fa-instagram"></i> @caf_launion</a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2026 CLUB ATLÉTICO LA UNIÓN. Todos los derechos reservados.</p>
+            <p style="margin-top: 15px;">
+                Diseño y Desarrollo Estratégico por 
+                <a href="https://merlinchile.cl" class="merlin-credit">MERLÍN CHILE</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
 
