@@ -670,22 +670,7 @@
 </section>
 
 <section class="noticia-destacada-section">
-    <div class="noticia-destacada-container">
-        
-        <div class="destacada-img-col">
-            <img src="img_caf/img_noticias/valdivia1.webp" alt="CAF en Valdivia">
-        </div>
-
-        <div class="destacada-contenido-col">
-            <span class="tag-destacado">DESTACADO</span>
-            <h2 class="destacada-titulo">Gran actuación del CAF en el Interescolar de Valdivia</h2>
-            <p class="destacada-resumen">
-                Con una delegación de 10 atletas de diversos colegios de La Unión, el club enfrentó pruebas de pista y campo en el Instituto Alemán...
-            </p>
-            <a href="noticias/interescolar-valdivia-2026.html" class="btn-noticia">Leer crónica completa</a>
-        </div>
-        
-    </div>
+    <div id="contenedor-noticias"></div>
 </section>
 
 
@@ -952,23 +937,31 @@ function toggleMenu() {
 </script>
 
 <script>
-fetch('noticias.json')
-    .then(res => res.json())
-    .then(data => {
-        // 1. Mostrar la Destacada (la primera del JSON)
-        const destacada = data[0];
-        document.getElementById('contenedor-destacada').innerHTML = `
-            <h2>${destacada.titulo}</h2>
-            <p>${destacada.resumen}</p>
-        `;
+    fetch('noticias.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('contenedor-noticias');
+            
+            // Usamos la primera noticia como la "Destacada"
+            const dest = data[0];
+            let html = `
+                <section class="noticia-destacada-section">
+                    <div class="noticia-destacada-container">
+                        <div class="destacada-img-col">
+                            <img src="${dest.img}" alt="${dest.titulo}">
+                        </div>
+                        <div class="destacada-contenido-col">
+                            <span class="tag-destacado">${dest.tag}</span>
+                            <h2 class="destacada-titulo">${dest.titulo}</h2>
+                            <p class="destacada-resumen">${dest.resumen}</p>
+                            <a href="${dest.link}" class="btn-noticia">Leer crónica completa</a>
+                        </div>
+                    </div>
+                </section>`;
 
-        // 2. Mostrar las siguientes dos (Recientes)
-        const recientes = data.slice(1, 3); // Toma desde la posición 1 hasta la 3
-        const contenedorRecientes = document.getElementById('contenedor-recientes');
-        recientes.forEach(n => {
-            contenedorRecientes.innerHTML += `<article><h3>${n.titulo}</h3></article>`;
+            // Aquí puedes agregar un bucle si quieres listar más noticias abajo
+            container.innerHTML = html;
         });
-    });
 </script>
     
 
