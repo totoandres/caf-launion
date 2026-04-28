@@ -298,6 +298,14 @@
             
             .btn-noticia:hover { opacity: 0.9; }
 
+        .fecha-noticia { 
+        font-size: 13px; 
+        color: #888; 
+        margin-left: 10px; 
+        font-family: sans-serif;
+    }
+        
+
         /* Columna Izquierda: Noticias y Fotos */
         .feed-noticias h2 { border-bottom: 3px solid var(--azul-caf); display: inline-block; margin-bottom: 25px; }
         .card-noticia { background: white; border-radius: 15px; overflow: hidden; box-shadow: var(--sombra); margin-bottom: 30px; transition: 0.3s; }
@@ -940,20 +948,20 @@ function toggleMenu() {
     fetch('noticias.json')
         .then(response => response.json())
         .then(data => {
-            // Verificar que hay datos
             if (!data || data.length === 0) return;
-
-            const container = document.getElementById('contenedor-noticias');
             const dest = data[0]; 
+            const container = document.getElementById('contenedor-noticias');
 
-            // Construimos solo el contenido, NO la <section> (ya la tienes en el HTML)
             let html = `
                 <div class="noticia-destacada-container">
                     <div class="destacada-img-col">
-                        <img src="${dest.img || ''}" alt="${dest.titulo || 'Noticia'}">
+                        <img src="${dest.img || ''}" alt="${dest.titulo}">
                     </div>
                     <div class="destacada-contenido-col">
-                        <span class="tag-destacado">${dest.fecha}</span>
+                        <div>
+                            <span class="tag-destacado">${dest.tag || 'NOTICIA'}</span>
+                            <span class="fecha-noticia">${dest.fecha || ''}</span>
+                        </div>
                         <h2 class="destacada-titulo">${dest.titulo || 'Sin título'}</h2>
                         <p class="destacada-resumen">${dest.resumen || ''}</p>
                         <a href="${dest.link || '#'}" class="btn-noticia">Leer crónica completa</a>
@@ -961,8 +969,7 @@ function toggleMenu() {
                 </div>`;
 
             container.innerHTML = html;
-        })
-        .catch(error => console.error('Error cargando noticias.json:', error));
+        });
 </script>
     
 
