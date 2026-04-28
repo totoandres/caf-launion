@@ -16,25 +16,24 @@
         body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: #333; line-height: 1.6; }
 
        /* Borra el bloque anterior de .noticia-header en tu HTML y pega este: */
+        /* Este bloque único controla la imagen, el padding y la posición */
         .noticia-header {
-        position: relative;
-        padding: 120px 20px;
-        text-align: center;
-        border-bottom: 5px solid var(--naranja);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    
-        /* CAMBIA ESTO: Usamos la URL absoluta de tu sitio */
-        background-image: linear-gradient(rgba(0, 45, 85, 0.7), rgba(0, 45, 85, 0.9)), 
-                          url('https://www.caflaunion.cl/img_caf/img_noticias/temuco2026.webp'); 
-        
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: #002D55; /* Respaldo en caso de que falle */
-    }
+            position: relative;
+            padding: 120px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--naranja);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* La imagen de fondo */
+            background: linear-gradient(rgba(0, 45, 85, 0.7), rgba(0, 45, 85, 0.9)), 
+                        url('https://www.caflaunion.cl/img_caf/img_noticias/temuco2026.webp'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #002D55; /* Respaldo */
+        }
         
         /* Ajustes de texto obligatorios para que resalten */
         .noticia-header h1 {
@@ -59,10 +58,6 @@
         .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: var(--naranja); }
 
-        /* Estructura de la Noticia - AQUÍ ESTABA EL ERROR DEL MARGEN */
-        .noticia-header { background: var(--gris-claro); padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--naranja); }
-
-        
         /* Este contenedor es el que evita que el texto toque los bordes */
         .noticia-cuerpo { 
             max-width: 800px; 
