@@ -42,4 +42,25 @@
     </div>
 
 </body>
+
+<script>
+fetch('noticias.json')
+    .then(res => res.json())
+    .then(data => {
+        // Mostrar desde la posición 3 en adelante (es decir, la 4ta noticia en adelante)
+        const archivo = data.slice(3); 
+        const contenedor = document.getElementById('contenedor-archivo');
+        
+        archivo.forEach(n => {
+            contenedor.innerHTML += `
+                <div class="card-archivo">
+                    <h3>${n.titulo}</h3>
+                    <a href="${n.link}">Leer crónica</a>
+                </div>
+            `;
+        });
+    });
+</script>
+
+    
 </html>
