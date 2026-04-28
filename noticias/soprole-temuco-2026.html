@@ -17,28 +17,24 @@
 
        /* Borra el bloque anterior de .noticia-header en tu HTML y pega este: */
         .noticia-header {
-            position: relative;
-            padding: 120px 20px; /* Un poco más de aire para que se vea más grande */
-            text-align: center;
-            border-bottom: 5px solid var(--naranja);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        position: relative;
+        padding: 120px 20px;
+        text-align: center;
+        border-bottom: 5px solid var(--naranja);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        /* CAMBIA ESTO: Usamos la URL absoluta de tu sitio */
+        background-image: linear-gradient(rgba(0, 45, 85, 0.7), rgba(0, 45, 85, 0.9)), 
+                          url('https://www.caflaunion.cl/img_caf/img_noticias/temuco2026.webp'); 
         
-            /* --- CORRECCIÓN DE FONDO --- */
-            /* Primero definimos un color de fondo azul sólido como respaldo */
-            background-color: #002D55; 
-        
-            /* Luego intentamos cargar la imagen CON el degradado encima */
-            /* Asegúrate de que esta ruta coincida con tu carpeta en el servidor */
-            background-image: linear-gradient(rgba(0, 45, 85, 0.7), rgba(0, 45, 85, 0.9)), 
-                              url('../img_caf/img_noticias/temuco2026.webp'); 
-            
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #002D55; /* Respaldo en caso de que falle */
+    }
         
         /* Ajustes de texto obligatorios para que resalten */
         .noticia-header h1 {
