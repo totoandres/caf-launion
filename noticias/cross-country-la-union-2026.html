@@ -1,1 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crónica: Soprole Temuco 2026 - CAF La Unión</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img_caf/logo_caf.png">
+    <link rel="apple-touch-icon" href="img_caf/logo_caf.png">
+
+    
+    <style>
+        :root {
+            --azul-caf: #002D55;
+            --naranja: #FF6600;
+            --gris-claro: #F8F9FA;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: #333; line-height: 1.6; }
+
+         /* --- BLOQUE CORREGIDO: Imagen de Fondo Detrás del Título --- */
+            .noticia-header {
+                position: relative;
+                min-height: 400px; /* Asegura altura suficiente para la imagen */
+                padding: 100px 20px;
+                text-align: center;
+                border-bottom: 5px solid var(--naranja);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+    
+                /* Imagen de fondo y Degradado de Contraste */
+                /* He corregido la sintaxis del gradiente para garantizar compatibilidad */
+                background-image: 
+                    linear-gradient(180deg, rgba(0, 45, 85, 0.75) 0%, rgba(0, 45, 85, 0.95) 100%), 
+                    url('../img_caf/img_noticias/soproletemuco2026_2.webp'); /* Ruta relativa corregida */
+                
+                background-size: cover;
+                background-position: center 25%;
+                background-repeat: no-repeat;
+                background-attachment: scroll; /* Mejor para móviles que 'fixed' */
+                background-color: var(--azul-caf); /* Color de respaldo */
+            }
+            
+            /* Ajuste de Texto para Contraste */
+            .noticia-header h1 {
+                color: white !important; /* Fuerza el color blanco */
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* Sombra para mayor legibilidad */
+                font-size: 2.8rem; /* Un poco más grande para impacto visual */
+                margin: 0;
+            }
+    
+            .noticia-header .categoria-tag {
+                background: var(--naranja) !important;
+                color: white !important;
+            }
+            
+            .noticia-header .fecha {
+                color: rgba(255,255,255,0.8) !important;
+                margin-top: 15px;
+                font-size: 0.9rem;
+            }
+            
+            /* Ajuste para pantallas pequeñas (móviles) */
+            @media (max-width: 768px) {
+                .noticia-header {
+                    min-height: 300px; /* Un poco más corta en móvil */
+                    padding: 60px 15px;
+                }
+                .noticia-header h1 {
+                    font-size: 2rem; /* Texto más pequeño en móvil */
+                }
+            }
+        
+        /* Navegación Centrada */
+        nav { background: var(--azul-caf); padding: 15px 0; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; }
+        .nav-container { width: 100%; max-width: 800px; display: flex; justify-content: center; align-items: center; padding: 0 20px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--naranja); }
+
+        /* Este contenedor es el que evita que el texto toque los bordes */
+        .noticia-cuerpo { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 25px; /* 25px de margen interno para que respire en el celular */
+            box-sizing: border-box; 
+        }
+
+        h1 { font-size: 2.5rem; color: var(--azul-caf); margin: 20px 0; line-height: 1.2; }
+        .categoria-tag { background: var(--azul-caf); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+        
+        .noticia-content img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 15px; 
+            margin: 30px 0; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+        }
+        
+        .destacado-texto { 
+            font-size: 1.3rem; 
+            color: var(--azul-caf); 
+            font-weight: 600; 
+            border-left: 5px solid var(--naranja); 
+            padding-left: 20px; 
+            margin: 40px 0; 
+            font-style: italic; 
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--azul-caf);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .site-footer { background: #001A33; color: white; padding: 40px 20px; font-size: 0.9rem; margin-top: 60px; text-align: center; }
+        
+        /* --- ESTO FALTA EN TU NOTICIA PARA QUE SE VEA COMO EL INDEX --- */
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 40px;
+        text-align: left; /* Para que el texto no esté centrado y se vea profesional */
+    }
+    
+    .footer-section h4 {
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        border-left: 3px solid var(--naranja);
+        padding-left: 10px;
+    }
+    
+    .footer-section p, .footer-section a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
+    
+    .footer-section a:hover {
+        color: var(--naranja);
+        padding-left: 5px;
+    }
+    
+    .merlin-credit {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border: 1px solid rgba(255,255,255,0.3);
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container { 
+            grid-template-columns: 1fr; 
+            text-align: center; 
+        }
+        .footer-section h4 { border-left: none; padding-left: 0; }
+    }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .noticia-cuerpo { padding: 30px 20px; } /* Mantiene el margen en pantallas chicas */
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../club.html">El Club</a> 
+            <a href="../index.html#noticias">Noticias</a>
+            <a href="../index.html#galeria">Fotos</a>
+            <a href="https://instagram.com/caf_launion" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</nav>
+
+<article>
+    <header class="noticia-header">
+        <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+            <span class="categoria-tag">NACIONAL / TEMUCO</span>
+            <h1>Histórico: CAF La Unión brilla en Soprole Temuco 2026</h1>
+            <span style="display:block; margin-top:15px; color:#888;"><i class="far fa-calendar-alt"></i> Abril, 2026</span>
+        </div>
+    </header>
+
+    <div class="noticia-cuerpo noticia-content">
+        <p style="font-size: 1.2rem; color: #555; line-height: 1.4; margin-bottom: 30px; font-weight: 500; border-left: 4px solid var(--naranja); padding-left: 15px;">
+            Una delegación de atletas unioninos marcó un precedente en la Araucanía, obteniendo múltiples podios y consolidando el proyecto deportivo del club a nivel escolar nacional.
+        </p>
+    
+        <p>Durante los días 24, 25 y 26 de abril, el <strong>Club Atlético CAF de La Unión</strong> vivió una de sus jornadas más memorables.</p>
+
+        
+        <p> Nuestra delegación participó en los campeonatos de atletismo <strong>Soprole</strong> en Temuco, enfrentándose a la élite del atletismo escolar de la zona sur del país.</p>
+
+        <img src="../img_caf/img_noticias/soproletemuco2026_1.webp" alt="Atletas del CAF en competencia en Temuco">
+
+        <div class="destacado-texto">
+            "Este es un triunfo del trabajo constante y la convicción de nuestros atletas. Lograr podios en múltiples disciplinas confirma que somos un referente del alto rendimiento regional."
+        </div>
+
+        <h3>Cuadro de Honor: Podios Individuales</h3>
+        <p>Nuestros atletas demostraron un nivel excepcional en pista y campo, logrando resultados históricos para sus respectivos establecimientos y para nuestro club:</p>
+        
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 10px;"><i class="fas fa-medal" style="color: #FFD700;"></i> <strong>Franco Sotelo</strong> (Colegio Santa Cruz, Río Bueno): <strong>1er Lugar</strong> - 100 mts planos.</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-medal" style="color: #C0C0C0;"></i> <strong>Federico Zwanzger</strong> (Colegio Alemán, La Unión): <strong>2do Lugar</strong> - 800 mts planos.</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-medal" style="color: #C0C0C0;"></i> <strong>Vicente González</strong>(Escuela Radimadi): <strong>2do Lugar</strong> - 80 mts vallas.</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-medal" style="color: #C0C0C0;"></i> <strong>Jans Antillanca</strong> (Liceo Industrial Ricardo Fenner): <strong>2do Lugar</strong> - 110 mts vallas.</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-medal" style="color: #C0C0C0;"></i> <strong>Elías Olivera</strong> (Liceo B12, La Unión): <strong>2do Lugar</strong> - 110 mts vallas.</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-medal" style="color: #CD7F32;"></i> <strong>Isabella Robert</strong> (Colegio Alemán, La Unión): <strong>3er Lugar</strong> - 60 mts planos.</li>
+            <li style="margin-bottom: 10px;"><i class="fas fa-medal" style="color: #CD7F32;"></i> <strong>Alfonso Manríquez</strong> (Colegio Alemán, La Unión): <strong>3er Lugar</strong> - Salto Alto.</li>
+        </ul>
+
+        <h3>La hazaña de la Escuela Radimadi</h3>
+        <p>A estos éxitos individuales se suma el logro colectivo excepcional de la <strong>Escuela Radimadi</strong>, que obtuvo dos <strong>Primeros Lugares</strong> en los relevos 4x200 y 5x80 (categoría infantil varones), posicionando al atletismo municipal en la cima del podio.</p>
+
+        <img src="../img_caf/img_noticias/soproletemuco2026_2.webp" alt="Equipo de relevos Escuela Radimadi celebrando">
+
+     
+
+       <div style="margin-top: 50px; padding: 20px; border-top: 2px solid #EEE; text-align: center; color: #666; font-size: 0.9rem;">
+            <p><strong>Nota redactada por:</strong> Equipo de Comunicación CAF 2026</p>
+            <p><em>Para prensa y medios interesados, contactar a través de nuestros canales oficiales.</em></p>
+        </div>
+
+        <a href="../index.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver al inicio</a> </div>
+</article>
+
+<footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Club CAF La Unión</h4>
+                <p>Formando atletas, forjando carácter. El club de atletismo referente de la Región de Los Ríos.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Estadio Municipal, La Unión, Chile.</p>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <a href="club.html">Historia y Directiva</a>
+                <a href="#noticias">Noticias Recientes</a>
+                <a href="#galeria">Galería de Fotos</a>
+                <a href="docs/reglamento.pdf">Reglamento Interno</a>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <a href="https://wa.me/569XXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Profesor Nicolás</a>
+                <a href="mailto:contacto@caflaunion.cl"><i class="far fa-envelope"></i> contacto@caflaunion.cl</a>
+                <a href="https://instagram.com/caf_launion" target="_blank"><i class="fab fa-instagram"></i> @caf_launion</a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2026 CLUB ATLÉTICO LA UNIÓN. Todos los derechos reservados.</p>
+            <p style="margin-top: 15px;">
+                Diseño y Desarrollo Estratégico por 
+                <a href="https://merlinchile.cl" class="merlin-credit">MERLÍN CHILE</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
 
