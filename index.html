@@ -949,9 +949,11 @@ function toggleMenu() {
         .then(response => response.json())
         .then(data => {
             if (!data || data.length === 0) return;
-            const dest = data[0]; 
+            
             const container = document.getElementById('contenedor-noticias');
-
+            
+            // 1. LA NOTICIA DESTACADA (La primera del JSON)
+            const dest = data[0]; 
             let html = `
                 <div class="noticia-destacada-container">
                     <div class="destacada-img-col">
@@ -967,6 +969,25 @@ function toggleMenu() {
                         <a href="${dest.link || '#'}" class="btn-noticia">Leer crónica completa</a>
                     </div>
                 </div>`;
+
+            // 2. LAS NOTICIAS RESTANTES (A partir de la segunda)
+            if (data.length > 1) {
+                html += `<div class="noticias-secundarias-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px;">`;
+                
+                // .slice(1) ignora la primera y recorre las demás
+                data.slice(1).forEach(noticia => {
+                    html += `
+                        <div class="card-noticia-secundaria" style="border: 1px solid #eee; padding: 15px; border-radius: 10px;">
+                            <img src="${noticia.img}" alt="${noticia.titulo}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px;">
+                            <h3 style="font-size: 1.1rem; margin: 15px 0 10px; color: var(--azul-caf);">${noticia.titulo}</h3>
+                            <p style="font-size: 0.9rem; color: #666;">${noticia.resumen.substring(0, 100)}...</p>
+                            <a href="${noticia.link}" style="color: var(--naranja); font-weight: bold; text-decoration: none; font-size: 0.8rem;">Leer más →</a>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+            }
 
             container.innerHTML = html;
         });
