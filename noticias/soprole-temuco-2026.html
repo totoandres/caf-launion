@@ -15,41 +15,61 @@
 
         body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: #333; line-height: 1.6; }
 
-       /* Borra el bloque anterior de .noticia-header en tu HTML y pega este: */
-        /* Este bloque único controla la imagen, el padding y la posición */
-        .noticia-header {
-            position: relative;
-            padding: 120px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--naranja);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            /* La imagen de fondo */
-            background: linear-gradient(rgba(0, 45, 85, 0.7), rgba(0, 45, 85, 0.9)), 
-                        url('https://www.caflaunion.cl/img_caf/img_noticias/temuco2026.webp'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #002D55; /* Respaldo */
-        }
-        
-        /* Ajustes de texto obligatorios para que resalten */
-        .noticia-header h1 {
-            color: white !important; /* !important asegura que no lo pise otro estilo */
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra para máxima legibilidad */
-            margin-bottom: 10px;
-        }
-        
-        .noticia-header .categoria-tag {
-            background: var(--naranja) !important;
-            color: white !important;
-        }
-        
-        .noticia-header span {
-            color: #eee !important;
-        }
+         /* --- BLOQUE CORREGIDO: Imagen de Fondo Detrás del Título --- */
+            .noticia-header {
+                position: relative;
+                min-height: 400px; /* Asegura altura suficiente para la imagen */
+                padding: 100px 20px;
+                text-align: center;
+                border-bottom: 5px solid var(--naranja);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+    
+                /* Imagen de fondo y Degradado de Contraste */
+                /* He corregido la sintaxis del gradiente para garantizar compatibilidad */
+                background-image: 
+                    linear-gradient(180deg, rgba(0, 45, 85, 0.75) 0%, rgba(0, 45, 85, 0.95) 100%), 
+                    url('../img_caf/img_noticias/temuco2026.webp'); /* Ruta relativa corregida */
+                
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: scroll; /* Mejor para móviles que 'fixed' */
+                background-color: var(--azul-caf); /* Color de respaldo */
+            }
+            
+            /* Ajuste de Texto para Contraste */
+            .noticia-header h1 {
+                color: white !important; /* Fuerza el color blanco */
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* Sombra para mayor legibilidad */
+                font-size: 2.8rem; /* Un poco más grande para impacto visual */
+                margin: 0;
+            }
+    
+            .noticia-header .categoria-tag {
+                background: var(--naranja) !important;
+                color: white !important;
+            }
+            
+            .noticia-header .fecha {
+                color: rgba(255,255,255,0.8) !important;
+                margin-top: 15px;
+                font-size: 0.9rem;
+            }
+            
+            /* Ajuste para pantallas pequeñas (móviles) */
+            @media (max-width: 768px) {
+                .noticia-header {
+                    min-height: 300px; /* Un poco más corta en móvil */
+                    padding: 60px 15px;
+                }
+                .noticia-header h1 {
+                    font-size: 2rem; /* Texto más pequeño en móvil */
+                }
+            }
         
         /* Navegación Centrada */
         nav { background: var(--azul-caf); padding: 15px 0; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; }
