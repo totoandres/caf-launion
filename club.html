@@ -135,17 +135,25 @@
     <h2><i class="fas fa-running"></i> Cuerpo Técnico</h2>
     <div class="coaches-grid">
         
-        <div class="coach-card">
-            <div style="height: 250px; overflow: hidden; border-radius: 10px; margin-bottom: 15px;">
-                <img src="img_caf/nicolas.webp" alt="Nicolás Cañoles" 
-                     style="width: 100%; height: 100%; object-fit: cover;
-                            transform: scale(1.4) translateY(-8%); /* Zoom y lo subimos un 8% */
-                            transform-origin: center;">
-            </div>
-            <h3>Nicolás Cañoles</h3>
-            <p class="rol">Fundador y Head Coach</p>
-            <p class="bio">Con 37 años de vida y un profundo arraigo en nuestra comuna, Nicolás es el pilar fundamental y fundador del CAF...</p>
+       <div class="coach-card" style="background: var(--gris-fondo); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #ddd; display: flex; flex-direction: column; height: 100%;">
+    
+        <div style="height: 250px; overflow: hidden; border-radius: 10px; margin-bottom: 15px; width: 100%;">
+            <img src="img_caf/nicolas.webp" alt="Nicolás Cañoles" 
+                 style="width: 100%; height: 100%; object-fit: cover;
+                        
+                        /* --- NUEVO AJUSTE CALIBRADO --- */
+                        /* scale(1.4) era mucho zoom, scale(1.3) es mejor busto */
+                        /* translateY(-8%) lo subió mucho, translateY(-12%) lo baja un poco */
+                        
+                        transform: scale(1.3) translateY(-12%); 
+                        
+                        transform-origin: center;">
         </div>
+    
+        <h3 style="color: var(--azul-caf); margin: 10px 0 5px;">Nicolás Cañoles</h3>
+        <p class="rol" style="color: var(--naranja); font-weight: bold; font-size: 0.9rem; margin-bottom: 15px;">Fundador y Head Coach</p>
+        <p class="bio" style="font-size: 0.9rem; color: #666; text-align: justify; flex-grow: 1; margin: 0;">Con 37 años de vida y un profundo arraigo en nuestra comuna, Nicolás es el pilar fundamental y fundador del CAF. Profesor de Educación Media con mención en Educación Física, titulado de la Universidad de Los Lagos...</p>
+    </div>
 
         <div class="coach-card">
             <img src="img_caf/profejhon.webp" alt="Jhon Bórquez" 
