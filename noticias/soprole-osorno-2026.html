@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crónica: Meeting Valdivia - CAF La Unión</title>
+    <title>Crónica: Soprole Temuco 2026 - CAF La Unión</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img_caf/logo_caf.png">
+    <link rel="apple-touch-icon" href="img_caf/logo_caf.png">
+
+    
     <style>
         :root {
             --azul-caf: #002D55;
@@ -14,6 +18,62 @@
         }
 
         body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: #333; line-height: 1.6; }
+
+         /* --- BLOQUE CORREGIDO: Imagen de Fondo Detrás del Título --- */
+            .noticia-header {
+                position: relative;
+                min-height: 400px; /* Asegura altura suficiente para la imagen */
+                padding: 100px 20px;
+                text-align: center;
+                border-bottom: 5px solid var(--naranja);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+    
+                /* Imagen de fondo y Degradado de Contraste */
+                /* He corregido la sintaxis del gradiente para garantizar compatibilidad */
+                background-image: 
+                    linear-gradient(180deg, rgba(0, 45, 85, 0.75) 0%, rgba(0, 45, 85, 0.95) 100%), 
+                    url('../img_caf/img_noticias/temuco2026.webp'); /* Ruta relativa corregida */
+                
+                background-size: cover;
+                background-position: center 25%;
+                background-repeat: no-repeat;
+                background-attachment: scroll; /* Mejor para móviles que 'fixed' */
+                background-color: var(--azul-caf); /* Color de respaldo */
+            }
+            
+            /* Ajuste de Texto para Contraste */
+            .noticia-header h1 {
+                color: white !important; /* Fuerza el color blanco */
+                text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* Sombra para mayor legibilidad */
+                font-size: 2.8rem; /* Un poco más grande para impacto visual */
+                margin: 0;
+            }
+    
+            .noticia-header .categoria-tag {
+                background: var(--naranja) !important;
+                color: white !important;
+            }
+            
+            .noticia-header .fecha {
+                color: rgba(255,255,255,0.8) !important;
+                margin-top: 15px;
+                font-size: 0.9rem;
+            }
+            
+            /* Ajuste para pantallas pequeñas (móviles) */
+            @media (max-width: 768px) {
+                .noticia-header {
+                    min-height: 300px; /* Un poco más corta en móvil */
+                    padding: 60px 15px;
+                }
+                .noticia-header h1 {
+                    font-size: 2rem; /* Texto más pequeño en móvil */
+                }
+            }
         
         /* Navegación Centrada */
         nav { background: var(--azul-caf); padding: 15px 0; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; }
@@ -22,9 +82,6 @@
         .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: var(--naranja); }
 
-        /* Estructura de la Noticia - AQUÍ ESTABA EL ERROR DEL MARGEN */
-        .noticia-header { background: var(--gris-claro); padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--naranja); }
-        
         /* Este contenedor es el que evita que el texto toque los bordes */
         .noticia-cuerpo { 
             max-width: 800px; 
@@ -142,32 +199,43 @@
 
 <article>
     <header class="noticia-header">
-        <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
-            <span class="categoria-tag">INTERNACIONAL / ARGENTINA</span>
-            <h1>Orgullo Binacional: El CAF presente en los Juegos de la Araucanía</h1>
-            <span style="display:block; margin-top:15px; color:#888;"><i class="far fa-calendar-alt"></i> Noviembre, 2025</span>
-        </div>
+        <span class="categoria-tag">REGIONAL / OSORNO</span>
+        <h1>Lluvia de podios y récord histórico en el Soprole de Osorno</h1>
+        <span style="color: #eee; margin-top: 15px;"><i class="far fa-calendar-alt"></i> 11 y 12 de Abril, 2026</span>
     </header>
 
-   <div class="noticia-cuerpo noticia-content">
-    <p>Queremos felicitar y agradecer profundamente a nuestros atletas que cruzaron la cordillera para participar en los <strong>Juegos Binacionales de la Araucanía</strong>, celebrados en la Provincia de Chubut, Argentina. Esta cita, considerada el evento deportivo más importante del sur chileno-argentino, contó con la destacada presencia de nuestros representantes.</p>
+    <div class="noticia-cuerpo">
+        <p>Los pasados 11 y 12 de abril, la ciudad de Osorno fue testigo de una de las actuaciones más sólidas del <strong>Club Atlético CAF de La Unión</strong>. Con una delegación masiva de más de <strong>40 atletas</strong>, nuestro club no solo compitió, sino que dominó en diversas disciplinas, reafirmando el gran momento técnico de nuestros deportistas.</p>
 
-    <img src="../img_caf/img_noticias/araucania2025_3.webp" alt="Atletas CAF en Argentina">
+        <div class="destacado-texto">
+            "Lo vivido por la Escuela Radimadi fue extraordinario: dos primeros lugares en relevos y un récord de campeonato que quedará en los libros de historia del atletismo escolar."
+        </div>
 
-    <div class="destacado-texto">
-        "Más allá de los resultados, nuestros atletas dejaron en alto el nombre de La Unión y los valores del CAF, demostrando que el trabajo constante en la pista siempre da frutos."
+        <h3>Resultados Destacados</h3>
+        <table class="tabla-resultados">
+            <tr><td><span class="medalla">1° Lugar</span></td><td><strong>Franco Sotelo</strong> (Col. Santa Cruz R.B)</td><td>100m Planos Intermedia</td></tr>
+            <tr><td><span class="medalla">1° Lugar</span></td><td><strong>Franco Sotelo</strong> (Col. Santa Cruz R.B)</td><td>300m Planos</td></tr>
+            <tr><td><span class="medalla">2° Lugar</span></td><td><strong>Franco Sotelo</strong></td><td>Salto Largo Intermedia</td></tr>
+            <tr><td><span class="medalla">1° Lugar</span></td><td><strong>Escuela Radimadi</strong></td><td>Posta 4x200 (¡RÉCORD!)</td></tr>
+            <tr><td><span class="medalla">1° Lugar</span></td><td><strong>Escuela Radimadi</strong></td><td>Posta 5x80 Infantil Varones</td></tr>
+            <tr><td><span class="medalla">2° Lugar</span></td><td><strong>Anais Vargas</strong></td><td>800m Planos</td></tr>
+            <tr><td><span class="medalla">2° Lugar</span></td><td><strong>Jans Antillanca</strong>(Liceo Industrial L.U.)</td><td>110m Vallas Superior</td></tr>
+            <tr><td><span class="medalla">3° Lugar</span></td><td><strong>Alfonso Manríquez</strong> (Col. Alemán L.U)</td><td>Lanzamiento Pelotita</td></tr>
+            <tr><td><span class="medalla">3° Lugar</span></td><td><strong>Federico Zwanzger</strong> (Col. Alemán L.U)</td><td>800m Planos Intermedia</td></tr>
+            <tr><td><span class="medalla">3° Lugar</span></td><td><strong>Elias Olivera</strong>(Liceo B12 L.U.)</td><td>110m Vallas Intermedia</td></tr>
+            <tr><td><span class="medalla">3° Lugar</span></td><td><strong>Vicente González</strong></td><td>80m Vallas Infantil</td></tr>
+            <tr><td><span class="medalla">3° Lugar</span></td><td><strong>Isabela Robert</strong> (Col. Alemán L.U)</td><td>60m Planos</td></tr>
+        </table>
+
+        <p>Esta masiva participación destaca el compromiso de los diversos establecimientos que forman parte de la familia CAF, integrando a colegios de La Unión y Río Bueno en un solo espíritu competitivo.</p>
+
+        <div style="margin-top: 50px; padding: 20px; border-top: 2px solid #EEE; text-align: center; color: #666; font-size: 0.9rem;">
+            <p><strong>Nota redactada por:</strong> Equipo de Prensa CAF 2026</p>
+            <p><em>Fomentando el talento atlético de la Región de Los Ríos.</em></p>
+        </div>
+
+        <a href="../index.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
     </div>
-
-    <p>La delegación del club estuvo integrada por <strong>Sofía Araya, Florencia Miranda, Jans Antillanca y Franco Sotelo</strong>, quienes bajo la guía técnica del profesor <strong>Nicolás Cañoles</strong>, compitieron al más alto nivel frente a las mejores selecciones de la Patagonia y el sur de Chile.</p>
-
-    <p>Con gran esfuerzo, disciplina y un compromiso inquebrantable, cada uno de ellos fue un ejemplo de superación en tierras trasandinas. Su participación no solo suma experiencia deportiva, sino que fortalece el espíritu de nuestro club, siendo un verdadero orgullo para toda nuestra comunidad deportiva.</p>
-
-    <img src="../img_caf/img_noticias/araucania2025_2.webp" alt="Delegación CAF Chubut 2025">
-
-    <p>Gracias, equipo, por su entrega total y por llevar tan lejos el nombre del <strong>Club Atlético CAF</strong>. ¡Felicidades por este gran hito!</p>
-
-    <a href="../index.html" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
-</div>
 </article>
 
 <footer class="site-footer">
